@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.1-14
+
+[compare changes](https://github.com/0Abdullah/kient/compare/v1.0.1-13...v1.0.1-14)
+
+### 🚀 Enhancements
+
+- Add banUser & unbanUser ([#16](https://github.com/0Abdullah/kient/pull/16))
+
+### 🏡 Chore
+
+- Remove npm publish from release script ([d545fc4](https://github.com/0Abdullah/kient/commit/d545fc4))
+
 ## v1.0.1-13
 
 [compare changes](https://github.com/zSoulweaver/kient/compare/v1.0.1-12...v1.0.1-13)
