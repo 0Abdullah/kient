@@ -1,8 +1,8 @@
 import type { $Fetch } from 'ofetch'
 import { ofetch } from 'ofetch'
 import type { CycleTLSClient, CycleTLSRequestOptions, CycleTLSResponse } from 'cycletls'
-import initCycleTLS from 'cycletls'
-import exitHook from 'exit-hook'
+// import initCycleTLS from 'cycletls'
+// import exitHook from 'exit-hook'
 import toughCookie from 'tough-cookie'
 import type { Kient } from '../kient'
 
@@ -34,10 +34,6 @@ export class ApiClient {
   }
 
   private async init() {
-    this._cycleClient = await initCycleTLS()
-    exitHook(() => {
-      this._cycleClient.exit()
-    })
   }
 
   public static async create(client: Kient) {
@@ -60,7 +56,15 @@ export class ApiClient {
       },
     }
 
-    const response = await this._cycleClient(requestUrl, { ...defaultOptions, ...params.options }, params.method)
+    const res = await fetch(requestUrl, { ...defaultOptions, ...params.options, method: params.method })
+    const text = await res.text()
+    const json = JSON.parse(text)
+    const response: CycleTLSResponse = {
+      body: json ?? text,
+      headers: res.headers,
+      status: res.status,
+    }
+    // const response = await this._cycleClient(requestUrl, { ...defaultOptions, ...params.options }, params.method)
     await this.handleCookies(response, requestUrl)
 
     return response
@@ -69,6 +73,10 @@ export class ApiClient {
 
   public async setBearerToken(token: string) {
     this.bearerToken = token
+  }
+
+  public async getBearerToken() {
+    return this.bearerToken
   }
 
   public async setKickAuthHeader(kickAuthHeader: string) {
