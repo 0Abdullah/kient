@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.0.1-16
+
+[compare changes](https://github.com/0Abdullah/kient/compare/v1.0.1-15...v1.0.1-16)
+
 ## v1.0.1-15
 
 [compare changes](https://github.com/0Abdullah/kient/compare/v1.0.1-14...v1.0.1-15)
