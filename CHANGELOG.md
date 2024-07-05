@@ -1,6 +1,15 @@
 # Changelog
 
 
+## v1.0.2-0
+
+[compare changes](https://github.com/0Abdullah/kient/compare/v1.0.1-15...v1.0.2-0)
+
+### 🏡 Chore
+
+- **release:** V1.0.1-16 ([acb1fe5](https://github.com/0Abdullah/kient/commit/acb1fe5))
+- **release:** V1.0.1 ([f89d780](https://github.com/0Abdullah/kient/commit/f89d780))
+
 ## v1.0.1
 
 [compare changes](https://github.com/0Abdullah/kient/compare/v1.0.1-16...v1.0.1)
