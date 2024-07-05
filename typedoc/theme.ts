@@ -1,4 +1,4 @@
-import type { Application, DeclarationReflection, PageEvent, Reflection, SignatureReflection, SomeType } from 'typedoc'
+import type { Application, DeclarationReflection, PageEvent, Reflection, SignatureReflection } from 'typedoc'
 import { MarkdownTheme, MarkdownThemeRenderContext } from 'typedoc-plugin-markdown'
 import { signatureMemberReturns } from './theme/signature-member-returns'
 import { sources } from './theme/sources'

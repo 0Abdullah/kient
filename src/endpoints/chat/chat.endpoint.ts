@@ -113,19 +113,19 @@ export class ChatEndpoint extends BaseEndpoint {
       body = buildBody<BanUserInput>({
         banned_username: target,
         permanent: true,
-      });
+      })
     } else {
       body = buildBody<BanUserInput>({
         banned_username: target,
-        duration: duration,
+        duration,
         permanent: false,
-      });
+      })
     }
     const response = await this._apiClient.callKickApi({
       endpoint: `api/v2/channels/${channel}/bans`,
       method: 'post',
       options: {
-        body: body,
+        body,
       },
     })
     if (response.status !== 200)
@@ -140,7 +140,7 @@ export class ChatEndpoint extends BaseEndpoint {
 
   public async unbanUser(channel: string, target: string) {
     this.checkAuthenticated()
-  
+
     const response = await this._apiClient.callKickApi({
       endpoint: `api/v2/channels/${channel}/bans/${target}`,
       method: 'delete',
@@ -154,5 +154,4 @@ export class ChatEndpoint extends BaseEndpoint {
 
     return deserializedResponse
   }
-
 }
