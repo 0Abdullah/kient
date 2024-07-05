@@ -59,7 +59,15 @@ export class ApiClient {
     const res = await fetch(requestUrl, { ...defaultOptions, ...params.options, method: params.method })
     const text = await res.text()
     const json = JSON.parse(text)
-    const response: CycleTLSResponse = {
+    const response: {
+      status: number
+      body: string | {
+        [key: string]: any
+      }
+      headers: {
+        [key: string]: any
+      }
+    } = {
       body: json ?? text,
       headers: res.headers,
       status: res.status,
